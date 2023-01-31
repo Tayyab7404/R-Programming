@@ -1,4 +1,4 @@
-# Mean Deviation:
+# Standard Deviation:
 
 mylength = function(data)
 {
@@ -23,7 +23,7 @@ mymean = function(data){
   return = sum/n
 } 
 
-MeanDeviation = function(data)
+StandardDeviation = function(data)
 {
   mean = mymean(data)
   n = mylength(data)
@@ -31,15 +31,15 @@ MeanDeviation = function(data)
   
   for(i in data)
   {
-    sum = sum + abs(mean-i)
+    sum = sum + (mean-i)*(mean-i)
   }
   
-  return = sum/n
+  return = sqrt(sum/n)
 }
 
 print("Enter the data: ")
 data = scan()
 
-print("Mean Deviation of the given data: ")
+print("Standard Deviation of the given data: ")
 print(data)
-print(MeanDeviation(data))
+print(StandardDeviation(data))
