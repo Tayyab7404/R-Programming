@@ -1,4 +1,4 @@
-# Geometric Mean:
+# Harmonic Mean:
 
 mylength = function(data)
 {
@@ -12,16 +12,17 @@ mylength = function(data)
   return = count
 }
 
-GeometricMean = function(data)
+HarmonicMean = function(data)
 {
+  sum = 0
   n = mylength(data)
   
-  product = 1
-  
   for(i in data)
-    product = product * i
+  {
+    sum = sum + (1/i)
+  }
   
-  return = product^(1/n)
+  return = n/sum
 }
 
 print("Enter the elements: ")
@@ -29,4 +30,4 @@ data = scan()
 
 print("Geometric Mean of the given data: ")
 print(data)
-print(GeometricMean(data))
+print(HarmonicMean(data))
